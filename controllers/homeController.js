@@ -8,10 +8,9 @@ const homeController = (req, res) => {
 
 const addCharacterToDynamo = (req, res) => {
     try{
-        console.log(req.body)
         const { id, name, occupation } = req.body;
         const addedChar = ddbFuncs.addCharacter(id, name, occupation);
-        res.send(addedChar);
+        res.send("Success");
     }catch (err) {
         console.log('ERROR: ' + err)
     }

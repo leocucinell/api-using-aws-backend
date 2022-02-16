@@ -34,16 +34,8 @@ const addCharacter = async (id, name, occupation) => {
             }
         }
     };
-    const addedCharacter = await dynamoClient.putItem(params, (err, data) => {
-        if(err){
-            console.log('PUT ITEM ERROR')
-            console.log('ERROR: ' + err);
-        } else {
-            console.log('~~ SUCCESS ~~');
-            console.log(data)
-        }
-    });
-    return addedCharacter
+    const addedCharacter = await dynamoClient.putItem(params).promise();
+    return "Success"
 }
 
 module.exports = {
