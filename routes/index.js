@@ -1,3 +1,4 @@
 module.exports = {
-    home: require('./homeRoutes')
+    home: require('./homeRoutes'),
+    chars: require('./charaterRoutes')
 }
